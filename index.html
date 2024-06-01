@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Document Title -->
+<title>Bookmark</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Link to the 'Pacifico' font family -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="./portfolio/bookmark.png">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="./css/all.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="./css/main.css">
+
+</head>
+<body>
+    
+<!-- Header Section -->
+<header class="header">
+    <!-- Container for content, horizontally centered -->
+    <div class="py-5 container mx-auto">
+        <!-- Title Section -->
+        <div class="title">
+            <!-- Main title -->
+            <h1 class="mx-auto p-1">Bookmark</h1>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="my-5 py-2 main-content">
+            <!-- Bookmark Description -->
+            <div>
+                <h2 class="text-center py-3">
+                    <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i>
+                </h2>
+            </div>
+
+            <!-- Form for adding bookmark -->
+            <div>
+                <label for="bookNameInput" class="mb-2 fw-bold lead">
+                    <i class="fa-solid fa-book-bookmark pe-2"></i>Site Name
+                </label>
+                <input type="text" placeholder="Bookmark Name" class="form-control" id="bookNameInput" oninput="validationInputs(this)">
+            </div>
+            <div>
+                <label for="bookSiteInput" class="mb-2 mt-4 fw-bold lead">
+                    <i class="fa-solid fa-link pe-2"></i>Site URL
+                </label>
+                <input type="url" placeholder="Website URL" class="form-control" id="bookSiteInput" oninput="validationInputs(this)">
+            </div>
+
+            <!-- Buttons for submission and updating -->
+            <div class="my-4 text-center">
+                <button id="btn-add" class="btn btn-brown px-5" onclick="addBookMark()">Submit</button>
+                <button id="btn-update" class="btn btn-update px-5 d-none" onclick="updateMarkBook()">Update</button>
+            </div>
+        </div>
+
+        <!-- Bookmark List Section -->
+        <div>
+            <!-- Search Input -->
+            <div class="mb-5">
+                <input type="search" name="searchInput" onkeyup="SearchMarkBook()" id="bookSearchInput" class="form-control w-75 mx-auto" placeholder="Search by name..." oninput="validationInputs(this)">
+            </div>
+
+            <!-- Table to display bookmark list -->
+            <div>
+                <table class="table text-center table-striped align-middle">
+                    <thead>
+                        <tr class="lead">
+                            <th>Index</th>
+                            <th>Icon</th>
+                            <th>Website Name</th>
+                            <th>Visit</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableData">
+                        <!-- Data will be displayed here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Bootstrap Modal for Empty Input Alert -->
+<div class="modal fade " id="emptyInputModal" tabindex="-1" aria-labelledby="emptyInputModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+  
+            <div class="modal-body">
+                <div class="pt-3">
+                    <i class="fa-solid fa-circle fa-xl me-2 text-danger"></i>
+                    <i class="fa-solid fa-circle fa-xl me-2 text-warning"></i>
+                    <i class="fa-solid fa-circle fa-xl me-2 text-success"></i>
+
+                </div>
+                <div class="pt-5">
+                   <h2 class="ps-2 h5"> Site Name or Url is not valid, Please follow the rules below :</h2>
+                </div>
+                <div class="pt-3">
+                    <p class="ps-3 lead"><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site name must contain at least one character</p>
+                    <p class="ps-3 lead" ><i class="fa-regular fa-circle-right p-2 text-danger"></i>Site URL must be a valid one</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

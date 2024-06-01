@@ -1,0 +1,106 @@
+/* Selection Highlight */
+::selection {
+    background-color: #fec260;
+}
+
+/* Header Styles */
+header {
+    background-color: #f7ecde;
+    min-height: 100vh;
+}
+
+/* Link Styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Title Styles */
+header h1 {
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+    font-size: 60px;
+    font-family: "Pacifico", cursive;
+}
+
+/* Header Title Pseudo-element Styles */
+header h1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    left: 0;
+    bottom: 10px;
+    background-color: #fec260;
+    transition: all 350ms ease;
+    z-index: -1;
+}
+
+/* Header Title Hover Effect */
+h1:hover::before {
+    height: 60%;
+}
+
+/* Main Content Styles */
+.main-content {
+    border-width: 3px;
+    border-style: dotted;
+    border-color: black transparent black transparent;
+}
+
+/* Custom Button Styles */
+.btn-brown {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #d1512d;
+    --bs-btn-border-color: #d1512d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #bb4120;
+    --bs-btn-hover-border-color: #a03315;
+}
+
+/* Form Control Focus Styles */
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #d99c39;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+/* Header Subtitle Styles */
+header h2 {
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    background-clip: text;
+    color: transparent;
+}
+
+/* Custom Button Styles for Visit */
+.btn-visit {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #4CAF50;
+    --bs-btn-border-color: #4CAF50;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #45a049;
+    --bs-btn-hover-border-color: #3d8c43;
+}
+
+/* Custom Button Styles for Update */
+.btn-update {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ffc107;
+    --bs-btn-border-color: #ffc107;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ffca2c;
+    --bs-btn-hover-border-color: #ffc720;
+}
+
+/* Custom Button Styles for Delete */
+.btn-delete {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #dc3545;
+    --bs-btn-border-color: #dc3545;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #bb2d3b;
+    --bs-btn-hover-border-color: #b02a37;
+}
