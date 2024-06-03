@@ -218,7 +218,8 @@ function getSocialIcon(url) {
 function validationInputs(element) {
     var regex = {
         bookNameInput: /.+/,
-        bookSiteInput: /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/,
+        // Ensuring the URL starts with http or https
+        bookSiteInput: /^(https?:\/\/)([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/,
         bookSearchInput: /.+/,
     }
 
@@ -236,6 +237,7 @@ function validationInputs(element) {
 
 // Check if URL is valid
 function isValidURL(url) {
-    var urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
+    // Ensuring the URL starts with http or https
+    var urlPattern = /^(https?:\/\/)([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
     return urlPattern.test(url.toLowerCase());
 }
